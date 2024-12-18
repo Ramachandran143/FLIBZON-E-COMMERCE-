@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Sign In</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url('IMAGES/AdobeStock_403807009_Editorial_Use_Only-1024x683.jpeg');
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .container {
+        background: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+    }
+    
+    .sign-in-form {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .input-group {
+        margin-bottom: 15px;
+    }
+    
+    input {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 100%;
+    }
+    
+    button {
+        padding: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: #0056b3;
+    }
+    
+    .message {
+        margin-top: 15px;
+        text-align: center;
+    }
+    
+</style>
+<body>
+    <div class="container">
+        <form class="sign-in-form">
+            <h2>Create Your Account</h2>
+            <div>
+                <label for="username" class="form-label"><b>create your username</b></label>
+                <br>
+                <input type="text" class="form-control" id="username" placeholder="Enter username">
+            </div>
+            <div class="input-group">
+                <label for="password"><b>create your password</b></label>
+                <br>
+                <input type="password" id="password" required placeholder="Enter your password">
+            </div>
+            <div class="input-group">
+                <label for="password"><b>conform password</b></label>
+                <br>
+                <input type="password" id="password" required placeholder="Enter Your Password">
+            </div>
+            <button type="submit">submit</button>
+            <p class="message">Not registered? <a href="login.html">Go to Login</a></p>
+        </form>
+    </div>
+</body>
+</html>

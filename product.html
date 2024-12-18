@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>products</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</head>
+<style>
+    /* Add shadow on hover */
+    .card:hover {
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        transform: scale(1.05);
+        /* Slightly scale up the card */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        /* Smooth transition */
+    }
+
+    /* Image zoom-in effect on hover */
+    .card-img-top {
+        transition: transform 0.3s ease;
+        /* Smooth transition for the image */
+    }
+
+    .card:hover .card-img-top {
+        transform: scale(1.1);
+        /* Slightly zoom in the image */
+    }
+</style>
+
+<body>
+    <div>
+        <!-- 1 st row -->
+        <div class="container">
+            <h2 class="my-4">Phones</h2>
+            <div class="row">
+                <!-- Card 1 -->
+                <div class="col-md-3 mb-4">
+                    <div class="card">
+                        <img src="IMAGES/i phone.jpg" class="card-img-top" alt="Redmi">
+                        <div class="card-body">
+                            <h5 class="card-title">I Phone</h5>
+                            <div class="d-flex align-items-center">
+                                <button class="btn btn-danger btn-sm me-2"
+                                    onclick="decreaseQuantity('IPhone')">-</button>
+                                <span id="IPhone-quantity" class="quantity">0</span>
+                                <button class="btn btn-success btn-sm ms-2"
+                                    onclick="increaseQuantity('IPhone')">+</button>
+                            </div>
+                            <p class="card-text">$320</p>
+                            <a href="#" class="btn btn-primary">Buy</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="col-md-3 mb-4">
+                    <div class="card">
+                        <img src="IMAGES/samsung.jpg" class="card-img-top" alt="Oppo">
+                        <div class="card-body">
+                            <h5 class="card-title">Samsung</h5>
+                            <div class="d-flex align-items-center">
+                                <button class="btn btn-danger btn-sm me-2"
+                                    onclick="decreaseQuantity('Samsung')">-</button>
+                                <span id="Samsung-quantity" class="quantity">0</span>
+                                <button class="btn btn-success btn-sm ms-2"
+                                    onclick="increaseQuantity('Samsung')">+</button>
+                            </div>
+                            <p class="card-text">$250</p>
+                            <a href="#" class="btn btn-primary">Buy</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="col-md-3 mb-4">
+                    <div class="card">
+                        <img src="IMAGES/oppo.jpg" class="card-img-top" alt="Vivo">
+                        <div class="card-body">
+                            <h5 class="card-title">Oppo</h5>
+                            <div class="d-flex align-items-center">
+                                <button class="btn btn-danger btn-sm me-2" onclick="decreaseQuantity('Oppo')">-</button>
+                                <span id="Oppo-quantity" class="quantity">0</span>
+                                <button class="btn btn-success btn-sm ms-2"
+                                    onclick="increaseQuantity('Oppo')">+</button>
+                            </div>
+                            <p class="card-text">$350</p>
+                            <a href="#" class="btn btn-primary">Buy</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="col-md-3 mb-4">
+                    <div class="card">
+                        <img src="IMAGES/vivo.jpg" class="card-img-top" alt="Samsung">
+                        <div class="card-body">
+                            <h5 class="card-title">Vivo</h5>
+                            <div class="d-flex align-items-center">
+                                <button class="btn btn-danger btn-sm me-2" onclick="decreaseQuantity('Vivo')">-</button>
+                                <span id="Vivo-quantity" class="quantity">0</span>
+                                <button class="btn btn-success btn-sm ms-2"
+                                    onclick="increaseQuantity('Vivo')">+</button>
+                            </div>
+                            <p class="card-text">$450</p>
+                            <a href="#" class="btn btn-primary">Buy</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 2 ndt row -->
+                <div class="container">
+                    <h2 class="my-4">Furniture</h2>
+                    <div class="row">
+                        <!-- Card 1 -->
+                        <div class="col-md-3 mb-4">
+                            <div class="card">
+                                <img src="IMAGES/Ikea furniture.jpg" class="card-img-top" alt="Redmi">
+                                <div class="card-body">
+                                    <h5 class="card-title">IKEA Furniture</h5>
+                                    <div class="d-flex align-items-center">
+                                        <button class="btn btn-danger btn-sm me-2"
+                                            onclick="decreaseQuantity('IKEAFurniture')">-</button>
+                                        <span id="IKEAFurniture-quantity" class="quantity">0</span>
+                                        <button class="btn btn-success btn-sm ms-2"
+                                            onclick="increaseQuantity('IKEAFurniture')">+</button>
+                                    </div>
+                                    <p class="card-text">$320</p>
+                                    <a href="#" class="btn btn-primary">Buy</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="col-md-3 mb-4">
+                            <div class="card">
+                                <img src="IMAGES/outdoor furniture.jpg" class="card-img-top" alt="Oppo">
+                                <div class="card-body">
+                                    <h5 class="card-title">OUTDOOR Furniture</h5>
+                                    <div class="d-flex align-items-center">
+                                        <button class="btn btn-danger btn-sm me-2"
+                                            onclick="decreaseQuantity('OUTDOORFurniture')">-</button>
+                                        <span id="OUTDOORFurniture-quantity" class="quantity">0</span>
+                                        <button class="btn btn-success btn-sm ms-2"
+                                            onclick="increaseQuantity('OUTDOORFurniture')">+</button>
+                                    </div>
+                                    <p class="card-text">$250</p>
+                                    <a href="#" class="btn btn-primary">Buy</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="col-md-3 mb-4">
+                            <div class="card">
+                                <img src="IMAGES/Songesand bedroom.jpg" class="card-img-top" alt="Vivo">
+                                <div class="card-body">
+                                    <h5 class="card-title">Songesand bedroom</h5>
+                                    <div class="d-flex align-items-center">
+                                        <button class="btn btn-danger btn-sm me-2"
+                                            onclick="decreaseQuantity('sandbedroom')">-</button>
+                                        <span id="sandbedroom-quantity" class="quantity">0</span>
+                                        <button class="btn btn-success btn-sm ms-2"
+                                            onclick="increaseQuantity('sandbedroom')">+</button>
+                                    </div>
+                                    <p class="card-text">$350</p>
+                                    <a href="#" class="btn btn-primary">Buy</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 4 -->
+                        <div class="col-md-3 mb-4">
+                            <div class="card">
+                                <img src="IMAGES/sofas.jpg" class="card-img-top" alt="Samsung">
+                                <div class="card-body">
+                                    <h5 class="card-title">Sofas</h5>
+                                    <div class="d-flex align-items-center">
+                                        <button class="btn btn-danger btn-sm me-2"
+                                            onclick="decreaseQuantity('Sofas')">-</button>
+                                        <span id="Sofas-quantity" class="quantity">0</span>
+                                        <button class="btn btn-success btn-sm ms-2"
+                                            onclick="increaseQuantity('Sofas')">+</button>
+                                    </div>
+                                    <p class="card-text">$450</p>
+                                    <a href="#" class="btn btn-primary">Buy</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- carts row 3 -->
+                        <!-- 1 st row -->
+                        <div class="container">
+                            <h2 class="my-4">Cars</h2>
+                            <div class="row">
+                                <!-- Card 1 -->
+                                <div class="col-md-3 mb-4">
+                                    <div class="card">
+                                        <img src="IMAGES/suzuki.jpg" class="card-img-top" alt="Redmi">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Suzuki</h5>
+                                            <div class="d-flex align-items-center">
+                                                <button class="btn btn-danger btn-sm me-2"
+                                                    onclick="decreaseQuantity('Suzuki')">-</button>
+                                                <span id="Suzuki-quantity" class="quantity">0</span>
+                                                <button class="btn btn-success btn-sm ms-2"
+                                                    onclick="increaseQuantity('Suzuki')">+</button>
+                                            </div>
+                                            <p class="card-text">$320</p>
+                                            <a href="#" class="btn btn-primary">Buy</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card 2 -->
+                                <div class="col-md-3 mb-4">
+                                    <div class="card">
+                                        <img src="IMAGES/ienova.jpg" class="card-img-top" alt="Oppo">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Ienova</h5>
+                                            <div class="d-flex align-items-center">
+                                                <button class="btn btn-danger btn-sm me-2"
+                                                    onclick="decreaseQuantity('Ienova')">-</button>
+                                                <span id="Ienova-quantity" class="quantity">0</span>
+                                                <button class="btn btn-success btn-sm ms-2"
+                                                    onclick="increaseQuantity('Ienova')">+</button>
+                                            </div>
+                                            <p class="card-text">$250</p>
+                                            <a href="#" class="btn btn-primary">Buy</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card 3 -->
+                                <div class="col-md-3 mb-4">
+                                    <div class="card">
+                                        <img src="IMAGES/car.jpg" class="card-img-top" alt="Vivo">
+                                        <div class="card-body">
+                                            <h5 class="card-title">TATA</h5>
+                                            <div class="d-flex align-items-center">
+                                                <button class="btn btn-danger btn-sm me-2"
+                                                    onclick="decreaseQuantity('Tata')">-</button>
+                                                <span id="Tata-quantity" class="quantity">0</span>
+                                                <button class="btn btn-success btn-sm ms-2"
+                                                    onclick="increaseQuantity('Tata')">+</button>
+                                            </div>
+                                            <p class="card-text">$350</p>
+                                            <a href="#" class="btn btn-primary">Buy</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card 4 -->
+                                <div class="col-md-3 mb-4">
+                                    <div class="card">
+                                        <img src="IMAGES/bens.jpg" class="card-img-top" alt="Samsung">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Bens</h5>
+                                            <div class="d-flex align-items-center">
+                                                <button class="btn btn-danger btn-sm me-2"
+                                                    onclick="decreaseQuantity('Bens')">-</button>
+                                                <span id="Bens-quantity" class="quantity">0</span>
+                                                <button class="btn btn-success btn-sm ms-2"
+                                                    onclick="increaseQuantity('Bens')">+</button>
+                                            </div>
+                                            <p class="card-text">$450</p>
+                                            <a href="#" class="btn btn-primary">Buy</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- carts row 4 -->
+                        <!-- 1 st row -->
+                        <div class="container">
+                            <h2 class="my-4">Cloth For Men</h2>
+                            <div class="row">
+                                <!-- Card 1 -->
+                                <div class="col-md-3 mb-4">
+                                    <div class="card">
+                                        <img src="IMAGES/branded shirts.jpg" class="card-img-top" alt="Redmi">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Branded Shirts</h5>
+                                            <div class="d-flex align-items-center">
+                                                <button class="btn btn-danger btn-sm me-2"
+                                                    onclick="decreaseQuantity('BrandedShirts')">-</button>
+                                                <span id="BrandedShirts-quantity" class="quantity">0</span>
+                                                <button class="btn btn-success btn-sm ms-2"
+                                                    onclick="increaseQuantity('BrandedShirts')">+</button>
+                                            </div>
+                                            <p class="card-text">$320</p>
+                                            <a href="#" class="btn btn-primary">Buy</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card 2 -->
+                                <div class="col-md-3 mb-4">
+                                    <div class="card">
+                                        <img src="IMAGES/cloth 1 causal.jpg" class="card-img-top" alt="Oppo">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Causual shirts</h5>
+                                            <div class="d-flex align-items-center">
+                                                <button class="btn btn-danger btn-sm me-2"
+                                                    onclick="decreaseQuantity('Causualshirts')">-</button>
+                                                <span id="Causualshirts-quantity" class="quantity">0</span>
+                                                <button class="btn btn-success btn-sm ms-2"
+                                                    onclick="increaseQuantity('Causualshirts')">+</button>
+                                            </div>
+                                            <p class="card-text">$250</p>
+                                            <a href="#" class="btn btn-primary">Buy</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card 3 -->
+                                <div class="col-md-3 mb-4">
+                                    <div class="card">
+                                        <img src="IMAGES/formal shirts.jpg" class="card-img-top" alt="Vivo">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Formals</h5>
+                                            <div class="d-flex align-items-center">
+                                                <button class="btn btn-danger btn-sm me-2"
+                                                    onclick="decreaseQuantity('Formals')">-</button>
+                                                <span id="Formals-quantity" class="quantity">0</span>
+                                                <button class="btn btn-success btn-sm ms-2"
+                                                    onclick="increaseQuantity('Formals')">+</button>
+                                            </div>
+                                            <p class="card-text">$350</p>
+                                            <a href="#" class="btn btn-primary">Buy</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card 4 -->
+                                <div class="col-md-3 mb-4">
+                                    <div class="card">
+                                        <img src="IMAGES/summer outfit.jpg" class="card-img-top" alt="Samsung">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Summer Outfit</h5>
+                                            <div class="d-flex align-items-center">
+                                                <button class="btn btn-danger btn-sm me-2"
+                                                    onclick="decreaseQuantity('SummerOutfit')">-</button>
+                                                <span id="SummerOutfit-quantity" class="quantity">0</span>
+                                                <button class="btn btn-success btn-sm ms-2"
+                                                    onclick="increaseQuantity('SummerOutfit')">+</button>
+                                            </div>
+                                            <p class="card-text">$450</p>
+                                            <a href="#" class="btn btn-primary">Buy</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- carts row -5 -->
+                        <!-- 1 st row -->
+                        <div class="container">
+                            <h2 class="my-4">Bikes</h2>
+                            <div class="row">
+                                <!-- Card 1 -->
+                                <div class="col-md-3 mb-4">
+                                    <div class="card">
+                                        <img src="IMAGES/Honda.jpg" class="card-img-top" alt="Redmi">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Honda</h5>
+                                            <div class="d-flex align-items-center">
+                                                <button class="btn btn-danger btn-sm me-2"
+                                                    onclick="decreaseQuantity('Honda')">-</button>
+                                                <span id="Honda-quantity" class="quantity">0</span>
+                                                <button class="btn btn-success btn-sm ms-2"
+                                                    onclick="increaseQuantity('Honda')">+</button>
+                                            </div>
+                                            <p class="card-text">$320</p>
+                                            <a href="#" class="btn btn-primary">Buy</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card 2 -->
+                                <div class="col-md-3 mb-4">
+                                    <div class="card">
+                                        <img src="IMAGES/Harley-Davidson.jpg" class="card-img-top" alt="Oppo">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Harley-Davidson</h5>
+                                            <div class="d-flex align-items-center">
+                                                <button class="btn btn-danger btn-sm me-2"
+                                                    onclick="decreaseQuantity('HarleyDavidson')">-</button>
+                                                <span id="HarleyDavidson-quantity" class="quantity">0</span>
+                                                <button class="btn btn-success btn-sm ms-2"
+                                                    onclick="increaseQuantity('HarleyDavidson')">+</button>
+                                            </div>
+                                            <p class="card-text">$250</p>
+                                            <a href="#" class="btn btn-primary">Buy</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card 3 -->
+                                <div class="col-md-3 mb-4">
+                                    <div class="card">
+                                        <img src="IMAGES/KTM.jpg" class="card-img-top" alt="Vivo">
+                                        <div class="card-body">
+                                            <h5 class="card-title">KTM</h5>
+                                            <div class="d-flex align-items-center">
+                                                <button class="btn btn-danger btn-sm me-2"
+                                                    onclick="decreaseQuantity('KTM')">-</button>
+                                                <span id="KTM-quantity" class="quantity">0</span>
+                                                <button class="btn btn-success btn-sm ms-2"
+                                                    onclick="increaseQuantity('KTM')">+</button>
+                                            </div>
+                                            <p class="card-text">$350</p>
+                                            <a href="#" class="btn btn-primary">Buy</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card 4 -->
+                                <div class="col-md-3 mb-4">
+                                    <div class="card">
+                                        <img src="IMAGES/MT-15.jpg" class="card-img-top" alt="Samsung">
+                                        <div class="card-body">
+                                            <h5 class="card-title">MT-15</h5>
+                                            <div class="d-flex align-items-center">
+                                                <button class="btn btn-danger btn-sm me-2"
+                                                    onclick="decreaseQuantity('MT15')">-</button>
+                                                <span id="MT15-quantity" class="quantity">0</span>
+                                                <button class="btn btn-success btn-sm ms-2"
+                                                    onclick="increaseQuantity('MT15')">+</button>
+                                            </div>
+                                            <p class="card-text">$450</p>
+                                            <a href="#" class="btn btn-primary">Buy</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- carts row -6 -->
+                        <!-- 1 st row -->
+                        <div class="container">
+                            <h2 class="my-4">Slipers</h2>
+                            <div class="row">
+                                <!-- Card 1 -->
+                                <div class="col-md-3 mb-4">
+                                    <div class="card">
+                                        <img src="IMAGES/Hampton.jpg" class="card-img-top" alt="Redmi">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Hampton</h5>
+                                            <div class="d-flex align-items-center">
+                                                <button class="btn btn-danger btn-sm me-2"
+                                                    onclick="decreaseQuantity('Hampton')">-</button>
+                                                <span id="Hampton-quantity" class="quantity">0</span>
+                                                <button class="btn btn-success btn-sm ms-2"
+                                                    onclick="increaseQuantity('Hampton')">+</button>
+                                            </div>
+                                            <p class="card-text">$320</p>
+                                            <a href="#" class="btn btn-primary">Buy</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card 2 -->
+                                <div class="col-md-3 mb-4">
+                                    <div class="card">
+                                        <img src="IMAGES/Bata.jpg" class="card-img-top" alt="Oppo">
+                                        <div class="card-body">
+                                            <h5 class="card-title">BATA</h5>
+                                            <div class="d-flex align-items-center">
+                                                <button class="btn btn-danger btn-sm me-2"
+                                                    onclick="decreaseQuantity('BATA')">-</button>
+                                                <span id="BATA-quantity" class="quantity">0</span>
+                                                <button class="btn btn-success btn-sm ms-2"
+                                                    onclick="increaseQuantity('BATA')">+</button>
+                                            </div>
+                                            <p class="card-text">$250</p>
+                                            <a href="#" class="btn btn-primary">Buy</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card 3 -->
+                                <div class="col-md-3 mb-4">
+                                    <div class="card">
+                                        <img src="IMAGES/Bukkled slippers.jpg" class="card-img-top" alt="Vivo">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Bukkeled sliper</h5>
+                                            <div class="d-flex align-items-center">
+                                                <button class="btn btn-danger btn-sm me-2"
+                                                    onclick="decreaseQuantity('Bukkeledsliper')">-</button>
+                                                <span id="Bukkeledsliper-quantity" class="quantity">0</span>
+                                                <button class="btn btn-success btn-sm ms-2"
+                                                    onclick="increaseQuantity('Bukkeledsliper')">+</button>
+                                            </div>
+                                            <p class="card-text">$350</p>
+                                            <a href="#" class="btn btn-primary">Buy</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card 4 -->
+                                <div class="col-md-3 mb-4">
+                                    <div class="card">
+                                        <img src="IMAGES/Tan Leat.jpg" class="card-img-top" alt="Samsung">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Tan Leat</h5>
+                                            <div class="d-flex align-items-center">
+                                                <button class="btn btn-danger btn-sm me-2"
+                                                    onclick="decreaseQuantity('Tanleat')">-</button>
+                                                <span id="Tanleat-quantity" class="quantity">0</span>
+                                                <button class="btn btn-success btn-sm ms-2"
+                                                    onclick="increaseQuantity('Tanleat')">+</button>
+                                            </div>
+                                            <p class="card-text">$450</p>
+                                            <a href="#" class="btn btn-primary">Buy</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- carts row -7 -->
+                        <!-- 1 st row -->
+                        <div class="container">
+                            <h2 class="my-4">Ear Phones</h2>
+                            <div class="row">
+                                <!-- Card 1 -->
+                                <div class="col-md-3 mb-4">
+                                    <div class="card">
+                                        <img src="IMAGES/Boat.jpg" class="card-img-top" alt="Redmi">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Boat</h5>
+                                            <div class="d-flex align-items-center">
+                                                <button class="btn btn-danger btn-sm me-2"
+                                                    onclick="decreaseQuantity('Boat')">-</button>
+                                                <span id="Boat-quantity" class="quantity">0</span>
+                                                <button class="btn btn-success btn-sm ms-2"
+                                                    onclick="increaseQuantity('Boat')">+</button>
+                                            </div>
+                                            <p class="card-text">$320</p>
+                                            <a href="#" class="btn btn-primary">Buy</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card 2 -->
+                                <div class="col-md-3 mb-4">
+                                    <div class="card">
+                                        <img src="IMAGES/Ear phones.jpg" class="card-img-top" alt="Oppo">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Ear Phone</h5>
+                                            <div class="d-flex align-items-center">
+                                                <button class="btn btn-danger btn-sm me-2"
+                                                    onclick="decreaseQuantity('EarPhone')">-</button>
+                                                <span id="EarPhone-quantity" class="quantity">0</span>
+                                                <button class="btn btn-success btn-sm ms-2"
+                                                    onclick="increaseQuantity('EarPhone')">+</button>
+                                            </div>
+                                            <p class="card-text">$250</p>
+                                            <a href="#" class="btn btn-primary">Buy</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card 3 -->
+                                <div class="col-md-3 mb-4">
+                                    <div class="card">
+                                        <img src="IMAGES/Bluetooth Headphone.jpg" class="card-img-top" alt="Vivo">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Bluetooth Headphone</h5>
+                                            <div class="d-flex align-items-center">
+                                                <button class="btn btn-danger btn-sm me-2"
+                                                    onclick="decreaseQuantity('BluetoothHeadphone')">-</button>
+                                                <span id="BluetoothHeadphone-quantity" class="quantity">0</span>
+                                                <button class="btn btn-success btn-sm ms-2"
+                                                    onclick="increaseQuantity('BluetoothHeadphone')">+</button>
+                                            </div>
+                                            <p class="card-text">$350</p>
+                                            <a href="#" class="btn btn-primary">Buy</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card 4 -->
+                                <div class="col-md-3 mb-4">
+                                    <div class="card">
+                                        <img src="IMAGES/Joymiso Tangle.jpg" class="card-img-top" alt="Samsung">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Joymiso Tangle</h5>
+                                            <div class="d-flex align-items-center">
+                                                <button class="btn btn-danger btn-sm me-2"
+                                                    onclick="decreaseQuantity('JoymisoTangle')">-</button>
+                                                <span id="JoymisoTangle-quantity" class="quantity">0</span>
+                                                <button class="btn btn-success btn-sm ms-2"
+                                                    onclick="increaseQuantity('JoymisoTangle')">+</button>
+                                            </div>
+                                            <p class="card-text">$450</p>
+                                            <a href="#" class="btn btn-primary">Buy</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- carts -row -8 -->
+                        <!-- 1 st row -->
+                        <div class="container">
+                            <h2 class="my-4">Bags</h2>
+                            <div class="row">
+                                <!-- Card 1 -->
+                                <div class="col-md-3 mb-4">
+                                    <div class="card">
+                                        <img src="IMAGES/college bags.jpg" class="card-img-top" alt="Redmi">
+                                        <div class="card-body">
+                                            <h5 class="card-title">college Bags</h5>
+                                            <div class="d-flex align-items-center">
+                                                <button class="btn btn-danger btn-sm me-2"
+                                                    onclick="decreaseQuantity('collegeBags')">-</button>
+                                                <span id="collegeBags-quantity" class="quantity">0</span>
+                                                <button class="btn btn-success btn-sm ms-2"
+                                                    onclick="increaseQuantity('collegeBags')">+</button>
+                                            </div>
+                                            <p class="card-text">$320</p>
+                                            <a href="#" class="btn btn-primary">Buy</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card 2 -->
+                                <div class="col-md-3 mb-4">
+                                    <div class="card">
+                                        <img src="IMAGES/Hand bags.jpg" class="card-img-top" alt="Oppo">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Hand Bags</h5>
+                                            <div class="d-flex align-items-center">
+                                                <button class="btn btn-danger btn-sm me-2"
+                                                    onclick="decreaseQuantity('HandBags')">-</button>
+                                                <span id="HandBags-quantity" class="quantity">0</span>
+                                                <button class="btn btn-success btn-sm ms-2"
+                                                    onclick="increaseQuantity('HandBags')">+</button>
+                                            </div>
+                                            <p class="card-text">$250</p>
+                                            <a href="#" class="btn btn-primary">Buy</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card 3 -->
+                                <div class="col-md-3 mb-4">
+                                    <div class="card">
+                                        <img src="IMAGES/Leather bags.jpg" class="card-img-top" alt="Vivo">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Leather Bags</h5>
+                                            <div class="d-flex align-items-center">
+                                                <button class="btn btn-danger btn-sm me-2"
+                                                    onclick="decreaseQuantity('LeatherBags')">-</button>
+                                                <span id="LeatherBags-quantity" class="quantity">0</span>
+                                                <button class="btn btn-success btn-sm ms-2"
+                                                    onclick="increaseQuantity('LeatherBags')">+</button>
+                                            </div>
+                                            <p class="card-text">$350</p>
+                                            <a href="#" class="btn btn-primary">Buy</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card 4 -->
+                                <div class="col-md-3 mb-4">
+                                    <div class="card">
+                                        <img src="IMAGES/cloth bags.jpg" class="card-img-top" alt="Samsung">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Cloth Bags</h5>
+                                            <div class="d-flex align-items-center">
+                                                <button class="btn btn-danger btn-sm me-2"
+                                                    onclick="decreaseQuantity('ClothBags')">-</button>
+                                                <span id="ClothBags-quantity" class="quantity">0</span>
+                                                <button class="btn btn-success btn-sm ms-2"
+                                                    onclick="increaseQuantity('ClothBags')">+</button>
+                                            </div>
+                                            <p class="card-text">$450</p>
+                                            <a href="#" class="btn btn-primary">Buy</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+    <script>
+        // Object to store product quantities
+        const productQuantities = {
+            // Phones
+            Oppo: 0,
+            Vivo: 0,
+            IPhone: 0,
+            Samsung: 0,
+
+            //furniture
+            IKEAFurniture: 0,
+            OUTDOORFurniture: 0,
+            sandbedroom: 0,
+            Sofas: 0,
+
+            //cars
+            Suzuki: 0,
+            Ienova: 0,
+            Tata: 0,
+            Bens: 0,
+
+            //shirts
+            BrandedShirts: 0,
+            Causualshirts: 0,
+            Formals: 0,
+            SummerOutfit: 0,
+
+            //bikes
+            Honda: 0,
+            HarleyDavidson: 0,
+            KTM: 0,
+            MT15: 0,
+
+            //bikes
+            Hampton: 0,
+            BATA: 0,
+            Bukkeledsliper: 0,
+            Tanleat: 0,
+
+            //Ear Phone
+            Boat: 0,
+            EarPhone: 0,
+            BluetoothHeadphone: 0,
+            JoymisoTangle: 0,
+            // bags 
+            collegeBags: 0,
+            HandBags: 0,
+            LeatherBags: 0,
+            ClothBags: 0,
+
+        };
+
+        // Function to calculate the total quantity
+        //function calculateTotalQuantity() {
+        //    let total = 0;
+        //    for (let product in productQuantities) {
+        //        total += productQuantities[product];
+        //    }
+        //   document.getElementById('total-products').innerText = total;
+        // }
+
+        // Function to increase quantity
+        function increaseQuantity(productId) {
+            productQuantities[productId]++;
+            updateQuantityDisplay(productId);
+            calculateTotalQuantity(); // Update total
+        }
+
+        // Function to decrease quantity
+        function decreaseQuantity(productId) {
+            if (productQuantities[productId] > 0) {
+                productQuantities[productId]--;
+                updateQuantityDisplay(productId);
+                calculateTotalQuantity(); // Update total
+            }
+        }
+
+        // Function to update the quantity display
+        function updateQuantityDisplay(productId) {
+            document.getElementById(`${productId}-quantity`).innerText = productQuantities[productId];
+        }
+    </script>
+</body>
+
+</html>
